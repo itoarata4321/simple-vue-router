@@ -32,11 +32,11 @@ docker-compose up -d
 ### 確認
 `<domain>/`へアクセスしてください。domainは各々の環境依存となってしまいますが、macやwindowsに直接dockerコンテナを立ち上げて
 特に何も設定変更していない場合は、`localhost`で問題ないのではないでしょうか？
-ちなみに私は、VMのDHCPの設定上`localhost`では動きませんのであしからず。。
-![ScreenShot](./image1.jpg)
-上記のように表示されてばOKです。`Color Button`のリンクをクリックします
-![ScreenShot](./image2.jpg)
-上記のように表示されてばOKです。ここで重要なのが、リンクを押下しても画面はリダイレクトされず、pageコンポーネントのみが入れ替わっています。
+  ちなみに私は、VMのDHCPの設定上`localhost`では動きませんのであしからず。。
+  <img src="./image1.jpg" width="300px">
+  上記のように表示されてばOKです。`Color Button`のリンクをクリックします
+  <img src="./image2.jpg" width="300px">
+  上記のように表示されてばOKです。ここで重要なのが、リンクを押下しても画面はリダイレクトされず、pageコンポーネントのみが入れ替わっています。
 また、リダイレクトされていないのにも関わらず、ブラウザの戻るボタンは作動します。
 これは、vue.jsのプラグインのvue-routerによるもので、Atomic DesignでWEBアプリケーションを構築する際に非常に強力なプラグインとなります。
 vue-routerとAtomic Designのpageコンポーネントの組み合わせで、良い意味で強制的ににSingle Page Application(SPA)となります。
