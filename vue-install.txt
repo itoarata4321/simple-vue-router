@@ -1,0 +1,32 @@
+## vue.jsをローカルインストールする
+# root
+su
+
+# node.jsをインストール
+apt install nodejs-dev node-gyp libssl1.0-dev
+apt install npm
+
+# vue-cliをインストール
+# まずpackage.jsonを作成する
+cd /var/www/LEMP/app
+npm init
+# VirtualBoxのマウント機能使っていると、シンボリックリンクが相性悪いので、「--no-bin-links」を付与してインストール
+npm install vue --save --no-bin-links
+npm install vue-router --save --no-bin-links
+npm install css-loader --save-dev --no-bin-links
+npm install vue-loader --save-dev --no-bin-links
+npm install vue-style-loader --save-dev --no-bin-links
+npm install vue-template-compiler --save-dev --no-bin-links
+# npm install babel-loader --save-dev --no-bin-links
+# npm install @babel/core --save-dev --no-bin-links
+# npm install @babel/preset-env --save-dev --no-bin-links
+# npm install mini-css-extract-plugin --save-dev --no-bin-links
+npm install webpack --save-dev --no-bin-links
+npm install webpack-cli --save-dev --no-bin-links
+npm install --no-bin-links
+
+## もし途中でつまずいたばあいは、npm cache を削除しないとハマる！！！！
+rm -rf node_modules
+npm cache clean -f
+npm cache ls
+rm -rf ~/.npm

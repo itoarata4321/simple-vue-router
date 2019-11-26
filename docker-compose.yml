@@ -1,0 +1,46 @@
+version: '3'
+services:
+  web:
+    image: nginx:1.15-alpine
+    container_name: lemp_nginx
+    restart: always
+    links:
+      - app
+    volumes:
+      - php-fpm-sock:/var/run/sock
+      - ./app:/var/www/app
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+      - 443:443
+    tty: true
+  app:
+    # image: php:7.2-fpm
+    build:
+      context: ./
+      dockerfile: Dockerfile-php-fpm
+    container_name: lemp_php
+    restart: always
+    volumes:
+      - php-fpm-sock:/var/run/sock
+      - ./app:/var/www/app
+      - ./php-fpm/zzz-www.conf:/usr/local/etc/php-fpm.d/zzz-www.conf
+    depends_on:
+      - db
+    links:
+      - db
+    tty: true
+  db:
+    image: mariadb:10.3-bionic
+    container_name: lemp_mariadb
+    restart: always
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+    tty: true
+volumes:
+  db_data:
+    driver: local
+  php-fpm-sock:

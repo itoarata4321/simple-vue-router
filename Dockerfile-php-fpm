@@ -1,0 +1,23 @@
+FROM php:7.2-fpm-alpine
+
+RUN apk update && \
+    apk upgrade && \
+    apk add --update \
+        libxml2-dev \
+        libzip-dev \
+        zip \
+        curl-dev && \
+    docker-php-ext-configure \
+        zip --with-libzip && \
+    docker-php-ext-install \
+        pdo_mysql \
+        mbstring \
+        iconv \
+        curl \
+        soap \
+        xml \
+        json \
+        zip
+
+RUN mkdir /var/run/sock
+RUN chown root:www-data /var/run/sock

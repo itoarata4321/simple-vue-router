@@ -1,0 +1,17 @@
+# Ubuntuで、Virtual Box 6.0でホスト、ゲスト間でmountをして開発したい場合のメモ
+# ※ファイルアップロードしなくて良いので超おすすめ
+
+# 共有フォルダを作成する、設定 -> 共有フォルダーに作成する。
+# 今回は名前は「LEMP」Mount Pointは「/var/www/LEMP」とする
+
+# UbuntuにVirtual Box Guest Additions のインストールする
+# Devices -> Insert Guest Additions CD image を選択し、光学ドライブにVBoxGuestAdditions.isoを挿入する
+# 以下コメンドでインストール
+sudo mount -t iso9660 /dev/sr0 /mnt
+sudo apt install -y gcc make perl linux-headers-generic
+sudo sh /mnt/VBoxLinuxAdditions.run
+
+# fstabにパーミッション込みでマウントさせるように追記
+# ※770固定でも良い場合は「自動マウント」にチェックでも良いが、パーミッション変えられないのはキツイ。。
+vi /etc/fstab
+LEMP /var/www/LEMP vboxsf fmode=0777,dmode=0775 0 0
