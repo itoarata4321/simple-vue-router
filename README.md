@@ -34,7 +34,7 @@ docker-compose up -d
 特に何も設定変更していない場合は、`localhost`で問題ないのではないでしょうか？
 ちなみに私は、VMのDHCPの設定上`localhost`では動きませんのであしからず。。
 
-<img src="./image1.jpg" width="300px">
+<img src="./image1.jpg" width="２５0px">
 
 上記のように表示されてばOKです。`Color Button`のリンクをクリックします
 
