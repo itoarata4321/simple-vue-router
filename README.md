@@ -43,7 +43,7 @@ docker-compose up -d
 上記のように表示されてばOKです。ここで重要なのが、リンクを押下しても画面はリダイレクトされず、pageコンポーネントのみが入れ替わっています。
 また、リダイレクトされていないのにも関わらず、ブラウザの戻るボタンは作動します。
 これは、vue.jsのプラグインのvue-routerによるもので、Atomic DesignでWEBアプリケーションを構築する際に非常に強力なプラグインとなります。
-vue-routerとAtomic Designのpageコンポーネントの組み合わせで、良い意味で強制的ににSingle Page Application(SPA)となります。
+vue-routerとAtomic Designのpageコンポーネントの組み合わせで、良い意味で強制的にSingle Page Application(SPA)となります。
 ### ビルド
 vueファイルを変更した場合`./app`へ移動してビルドしてください。
 ビルドコマンンドの設定は、package.jsonの`scripts`に記述しています。ご参考まで。
