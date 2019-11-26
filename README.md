@@ -58,7 +58,7 @@ npm run watch
 最初は、VMでのホスト、ゲスト間のマウントをしているとファイルの更新を察知してくれませんでした。
 watchの設定で`poll`を設定してあげるとうまくいきました。`./app/webpack.config.js`の`watchOptions`に設定済みです。
 
-vueファイルを変更が一通り終わったら、`npm run build`でフルコンパイルしてください。`./app/dist/js/bundle.js`のファイルサイズが 1/4 程になり
+vueファイルの変更が一通り終わったら、`npm run build`でフルコンパイルしてください。`./app/dist/js/bundle.js`のファイルサイズが 1/4 程になり
 動作も高速化されます。
 
-
+以上です。良きvueライフを！！
