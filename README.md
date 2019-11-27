@@ -46,7 +46,7 @@ docker-compose up -d
 vue-routerとAtomic Designのpageコンポーネントの組み合わせで、良い意味で強制的にSingle Page Application(SPA)となります。
 ### ビルド
 vueファイルを変更した場合`./app`へ移動してビルドしてください。
-ビルドコマンンドの設定は、package.jsonの`scripts`に記述しています。ご参考まで。
+ビルドコマンドの設定は、package.jsonの`scripts`に記述しています。ご参考まで。
 ```
 cd ./app
 npm run build
