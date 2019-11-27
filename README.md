@@ -8,10 +8,13 @@ yumやHomebrewでも docker, docker-compose, node.js, npm の４つが正常起�
 ```
 sh ./apt-install.sh
 ```
-続いてnode.jsとnpmをインストールします。
+続いてnode.jsとnpmをインストールします。古いバージョンはかえって不安定なため `n package` で新しいバージョンにします。
 ```
-apt install nodejs-dev node-gyp libssl1.0-dev
-apt install npm
+apt install -y nodejs npm
+npm install n -g
+n stable
+apt purge -y nodejs npm
+exec $SHELL -l
 ```
 続いてnode_modulesをインストールします。
 ```

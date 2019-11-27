@@ -3,8 +3,11 @@
 su
 
 # node.jsをインストール
-apt install nodejs-dev node-gyp libssl1.0-dev
-apt install npm
+apt install -y nodejs npm
+npm install n -g
+n stable
+apt purge -y nodejs npm
+exec $SHELL -l
 
 # vue-cliをインストール
 # まずpackage.jsonを作成する
