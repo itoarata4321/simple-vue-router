@@ -1,8 +1,6 @@
 <template>
     <div>
-        <p>
-            ここはページ２です。
-        </p>
+        <p>ここはページ２です。２</p>
         <div>
             <color-button :color="'blue'" class="color-button"></color-button>
         </div>
